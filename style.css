@@ -38,7 +38,7 @@ nav ul li a{
     text-decoration: none;
 }
 li a:hover {
-    background-color: #1F2937;
+    background-color: black;
   }
 #signUp{
     margin-top: 150px;
