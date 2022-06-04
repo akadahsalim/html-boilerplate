@@ -6,33 +6,33 @@ function playRound(playerSelection, computerSelection) {
     switch(computerSelection) {
         case "rock":
             if(playerSelection == "rock") {
-                return "Tie";
+                return "Tie, Rock vs Rock";
             }
             else if(playerSelection == "paper") {
-                return ("Player won");
+                return ("Player won, Paper beats Rock");
             }
             else {
-                return ("Computer won");
+                return ("Computer won, Rock beats Scissors");
             }
         case "paper":
             if(playerSelection == "rock") {
-                return ("Computer won");
+                return ("Computer won, Paper beats Rock");
             }
             else if(playerSelection == "paper") {
-                return "Tie";
+                return "Tie, Paper vs Paper";
             }
             else {
-                return ("Player won");
+                return ("Player won, Scissors beats Paper");
             }
         case "scissors":
             if(playerSelection == "rock") {
-                return ("Player won");
+                return ("Player won, Rock beats scissors");
             }
             else if(playerSelection == "paper") {
-                return ("Computer won");
+                return ("Computer won, Scissors beats Paper");
             }
             else {
-                return "Tie";
+                return "Tie, Scissors vs Scissors";
             }
         default:
             break;
@@ -51,11 +51,11 @@ function playGame() {
         const str = playRound(playerSelection, computerSelection);
         const currentRound = document.getElementById(i);
         currentRound.innerHTML = `Computer choose: ${computerSelection}, Player choose: ${playerSelection} and the round result is ${str}`;
-        console.log(`${str} round ${i}`);
-        if(str == "Computer won") {
+        console.log(`Round ${i}: ${str}`);
+        if(str.includes("Computer won")) {
             arr[0]++;
         }
-        else if(str == "Player won") {
+        else if(str.includes("Player won")) {
             arr[1]++;
         }
         console.log(`Computer: ${arr[0]} Player: ${arr[1]} \n\n`);
