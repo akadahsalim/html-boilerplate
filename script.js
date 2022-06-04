@@ -1,6 +1,6 @@
 function computerPlay() {
     const arr = ["rock", "paper", "scissors"];
-   return (arr[Math.floor(Math.random() * arr.length)]);
+    return (arr[Math.floor(Math.random() * arr.length)]);
 }
 function playRound(playerSelection, computerSelection) {
     switch(computerSelection) {
@@ -39,8 +39,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 function playGame() {
-    var arr = [0, 0];
-    var resultStr = "";
+    let arr = [0, 0];
+    let resultStr = "";
     const confiromation = prompt("Welcome to Rock, Paper, Scissors game!\n type yes to start game", "yes");
     if(confiromation.toLowerCase() != "yes"){
         return;
@@ -80,7 +80,7 @@ function playGame() {
 function getUserInput(n) {
     do {
         const input = prompt(`Round ${n}\nChoose rock, paper or scissors`);
-        var parsed = input.toLowerCase();
+        let parsed = input.toLowerCase();
     } while(parsed != "rock" && parsed != "paper" && parsed != "scissors");
     return parsed.toLowerCase();
     }
