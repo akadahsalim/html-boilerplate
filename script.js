@@ -80,9 +80,8 @@ function playGame() {
 function getUserInput(n) {
     do {
         const input = prompt(`Round ${n}\nChoose rock, paper or scissors`);
-        let parsed = input.toLowerCase();
+        var parsed = input.toLowerCase();
     } while(parsed != "rock" && parsed != "paper" && parsed != "scissors");
     return parsed.toLowerCase();
     }
-
 playGame();
