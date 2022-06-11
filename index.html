@@ -1,22 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
-    <title>Document</title>
+ <meta charset="utf-8">
+ <title> Simple Calculator using HTML, CSS and JavaScript </title>
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="header">Welcome to Rock, Paper, Scissors game!</h1>
-    <h2>The results of each round:</h2>
-    <ol>
-        <li id="1"></li>
-        <li id="2"></li>
-        <li id="3"></li>
-        <li id="4"></li>
-        <li id="5"></li>
-    </ol>
-    <p id="result"></p>
+<table class = "calculator">
+    <tr>
+        <td><input id = "operationLabel" type = "text" disabled /> </td>
+    </tr>
+    <tr>
+        <td><input id = "currentNumberLabel" type = "text" disabled /> </td>
+    </tr>
+    <tr>
+        <td> <input class = "button" id = "%" type = "button" value = "%" onclick = "percentButton()" /> </td>
+        <td> <input class = "button" type = "button" value = "CE" onclick = "clearEntry()" /> </td>
+        <td> <input class = "button" type = "button" value = "C" onclick = "clearLog()" /> </td>
+        <td> <input id = "backspace" type = "button"  onclick = "backspace()"/> </td>
+    </tr>
+    <tr>
+        <td> <input class = "button" type = "button" value = "1/x" onclick = "invertFraction()" /> </td>
+        <td> <input class = "button" type = "button" value = "x²" onclick = "square()" /> </td>
+        <td> <input class = "button" type = "button" value = "√" onclick = "squareRoot()" /> </td>
+        <td> <input class = "button" id = '÷' type = "button" value = "÷" onclick = "changeOperationTextBox('÷')" /> </td>
+    </tr>
+    <tr>
+        <td> <input class = "button" id = "7" type = "button" value = "7" onclick = "changeTextBox('7')" /> </td>
+        <td> <input class = "button" id = "8" type = "button" value = "8" onclick = "changeTextBox('8')" /> </td>
+        <td> <input class = "button" id = "9" type = "button" value = "9" onclick = "changeTextBox('9')" /> </td>
+        <td> <input class = "button" id = "×" type = "button" value = "×" onclick = "changeOperationTextBox('×')" /> </td>
+    </tr>
+    <tr>
+        <td> <input class = "button" id = "4" type = "button" value = "4" onclick = "changeTextBox('4')" /> </td>
+        <td> <input class = "button" id = "5" type = "button" value = "5" onclick = "changeTextBox('5')" /> </td>
+        <td> <input class = "button" id = "6" type = "button" value = "6" onclick = "changeTextBox('6')" /> </td>
+        <td> <input class = "button" id = "-" type = "button" value = "-" onclick = "changeOperationTextBox('-')" /> </td>
+    </tr>
+    <tr>
+        <td> <input class = "button" id = "1" type = "button" value = "1" onclick = "changeTextBox('1')" /> </td>
+        <td> <input class = "button" id = "2" type = "button" value = "2" onclick = "changeTextBox('2')" /> </td>
+        <td> <input class = "button" id = "3" type = "button" value = "3" onclick = "changeTextBox('3')" /> </td>
+        <td> <input class = "button" id = "+" type = "button" value = "+" onclick = "changeOperationTextBox('+')" /> </td>
+    </tr>
+    <tr>
+        <td> <input class = "button" type = "button" value = "+/-" onclick = "negate()" /> </td>
+        <td> <input class = "button" id = "0" type = "button" value = "0" onclick = "changeTextBox('0')" /> </td>
+        <td> <input class = "button" id = "." type = "button" value = "." onclick = "addComma()"/></td>
+        <td> <input class = "button" id = "=" type = "button" value = "=" onclick = "calculateExpression()" style="background-color: orange"/> </td>
+    </tr>
+</table>
+<script type="text/javascript" src="Scripts/StringOperations.js"></script>
+<script type="text/javascript" src="Scripts/Expressions.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="Scripts/KeyboardListeners.js"></script>
 </body>
 </html>
