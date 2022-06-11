@@ -91,9 +91,8 @@ function calculateExpression() {
         }
     } catch (e) {
         currentNumberLabel.value = "";
-        let a = alert(e);
-        currentNumberLabel.value = 0;
-        operationLabel = "";
+        alert(e);
+        clearLog();
     }
 }
 function clearLog() {
